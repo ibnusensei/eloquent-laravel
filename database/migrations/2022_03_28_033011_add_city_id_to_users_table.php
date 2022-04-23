@@ -16,6 +16,8 @@ class AddCityIdToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->unsignedBigInteger('city_id')->nullable()->after('email');
             $table->foreign('city_id')->references('id')->on('cities');
+            $table->unsignedBigInteger('country_id')->nullable()->after('city_id');
+            $table->foreign('country_id')->references('id')->on('countries');
         });
     }
 
