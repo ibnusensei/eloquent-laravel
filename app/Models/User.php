@@ -53,4 +53,19 @@ class User extends Authenticatable
     {
         return $this->belongsTo(City::class);
     }
+
+    public function logs()
+    {
+        return $this->hasMany(Log::class);
+    }
+
+    // createDailyLog
+    public function createDailyLog()
+    {
+        $faker = \Faker\Factory::create();
+        $text = $faker->text(200);
+        $this->logs()->create([
+            'log' => $text,
+        ]);
+    }
 }

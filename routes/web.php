@@ -3,6 +3,7 @@
 use App\Http\Controllers\BeverageController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\LogController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -29,6 +30,7 @@ Route::resource('country', CountryController::class);
 Route::resource('order', OrderController::class);
 Route::resource('food', FoodController::class);
 Route::resource('beverage', BeverageController::class);
+Route::resource('log', LogController::class);
 
 // Import and Export
 Route::get('/file-import',[UserController::class,'importView'])->name('import-view');
